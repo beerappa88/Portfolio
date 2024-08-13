@@ -16,7 +16,6 @@ Welcome to my personal portfolio website built using the MERN stack! This portfo
 - [Getting Started](#getting-started)
 - [SendGrid Email Integration](#sendgrid-email-integration)
 - [Installation](#installation)
-- [License](#license)
 - [Contact](#contact)
 
 ## Introduction
@@ -106,10 +105,6 @@ This project uses the [SendGrid API](https://sendgrid.com/) to handle email comm
       ```
 
 5. Visit `https://portfolio-8cqz.onrender.com/` in your browser to view the portfolio.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
