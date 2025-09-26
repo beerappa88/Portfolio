@@ -1,112 +1,126 @@
-# My MERN Portfolio
+# 🌟 MERN Portfolio
+Welcome to my **personal portfolio website** built using the **MERN stack**.  
+This project is designed to **showcase my technical expertise, professional experience, and projects**, while providing an intuitive platform for **recruiters and collaborators to connect with me**.
 
-Welcome to my personal portfolio website built using the MERN stack! This portfolio showcases my skills, experience, and projects, and serves as a platform for recruiters and potential collaborators to connect with me.
+---
 
-## Table of Contents
+## ✅ Features
+- **Modern & Responsive UI** built with **React.js**
+- **Backend API** powered by **Express.js & Node.js**
+- **SMTP Email Integration** using **Gmail**
+- **Optimized Production Build** with static asset serving
+- **Structured Sections**:
+  - **Home** – Professional overview
+  - **About** – Personal background & interests
+  - **Education** – Academic qualifications
+  - **Tech Stack** – Tools & technologies I use
+  - **Projects** – Highlighted work with links
+  - **Work Experience** – Career milestones
+  - **Contact** – Email-enabled communication form
 
-- [Introduction](#introduction)
-- [Sections](#sections)
-  - [Home](#home)
-  - [About](#about)
-  - [Education](#education)
-  - [Tech Stack](#tech-stack)
-  - [Projects](#projects)
-  - [Work Experience](#work-experience)
-  - [Contact](#contact)
-- [Getting Started](#getting-started)
-- [SendGrid Email Integration](#sendgrid-email-integration)
-- [Installation](#installation)
-- [Contact](#contact)
+---
 
-## Introduction
+## 🛠 Tech Stack
+- **Frontend:** React.js, Bootstrap 5
+- **Backend:** Node.js, Express.js
+- **Email Service:** Nodemailer with Gmail SMTP
+- **Other Tools:** CORS, Concurrently for development
 
-This project is a personal portfolio website built with the MERN stack (MongoDB, Express, React, Node.js). The website contains various sections like Home, About, Education, Tech Stack, Projects, Work Experience, and Contact, allowing recruiters and potential collaborators to learn more about me and my work.
+---
 
-## Tech Stack
+## 📂 Project Structure
+```
+Portfolio/
+├── client/                # React frontend (build folder for production)
+├── controllers/           # Express controllers (email, etc.)
+├── routes/                # API routes
+├── server.js              # Express server entry point
+├── package.json           # Project scripts and dependencies
+└── README.md              # Project documentation
+```
 
-- **Frontend**: React.js
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Email Service**: SendGrid API
+---
 
-## Sections
+## 🚀 Getting Started
 
-### Home
-The landing page of the portfolio, giving an overview of who I am and what I do.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/beerappa88/Portfolio.git
+cd Portfolio
+```
 
-### About
-A section that provides detailed information about me, my background, and my interests.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-### Education
-This section lists my educational qualifications.
+### 3. Set up Environment Variables
+Create a **`.env`** file in the project root:
+```env
+PORT=8080
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USE_TLS=true
+SMTP_USERNAME=your_gmail_username@gmail.com
+SMTP_PASSWORD=your_gmail_app_password
+SMTP_FROM_EMAIL=your_gmail_username@gmail.com
+```
+⚠️ **Important:**
+* Enable **2-Step Verification** in your Gmail account.
+* Generate an **App Password** for SMTP in your Google account and use it for `SMTP_PASSWORD`.
 
-### Tech Stack
-A showcase of the technologies and tools I have expertise in.
+### 4. Build the Frontend
+If you need to rebuild the React app:
+```bash
+cd client
+npm install
+npm run build
+cd ..
+```
 
-### Projects
-Details of various projects I have worked on, including links to the source code and live demos where applicable.
+### 5. Start the Application
+For **development** (runs server and client concurrently):
+```bash
+npm run dev
+```
+For **production** (serves built React app):
+```bash
+npm run server
+```
 
-### Work Experience
-Information about my professional work experience and the roles I have undertaken.
+---
 
-### Contact
-A section that allows recruiters or potential collaborators to get in touch with me via a contact form powered by the SendGrid API.
+## 🔑 Scripts
+* `npm run server` — Starts Express server (with nodemon)
+* `npm run client` — Starts React development server
+* `npm run dev` — Runs both server and client concurrently
 
-## Getting Started
+---
 
-To get started with the project, clone the repository and follow the installation steps below.
+## 📧 Email Integration
+The **contact form** uses **Nodemailer** with **Gmail SMTP** for sending emails.  
+Configuration is handled via environment variables (see `.env` setup above).  
+Implementation reference: [`controllers/portfolioContoller.js`](controllers/portfolioContoller.js)
 
-## SendGrid Email Integration
+---
 
-This project uses the [SendGrid API](https://sendgrid.com/) to handle email communication from the contact form. Ensure you have a valid SendGrid API key to enable this feature.
+## 📡 API Endpoints
+* `POST /api/v1/portfolio/sendEmail` → Sends an email from the contact form
 
-## Installation
+---
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
-    ```
+## 🌍 Live Demo
+👉 **[Portfolio Website](https://portfolio-8cqz.onrender.com/)**
+👉 **[GitHub Repository](https://github.com/beerappa88/Portfolio)**
 
-2. Install the dependencies for both the backend and frontend:
+---
 
-    - Backend:
-      ```bash
-      cd backend
-      npm install
-      ```
+## 📬 Contact
+📧 **Email:** Available via contact form on the portfolio  
+💼 **LinkedIn:** [linkedin.com/in/beerappa](https://www.linkedin.com/in/beerappa/)  
+👨‍💻 **GitHub:** [github.com/beerappa88](https://github.com/beerappa88)
 
-    - Frontend:
-      ```bash
-      cd frontend
-      npm install
-      ```
+---
 
-3. Create a `.env` file in the backend directory and add your environment variables:
-
-    ```env
-    PORT=5000
-    MONGODB_URI=your_mongodb_connection_string
-    SENDGRID_API_KEY=your_sendgrid_api_key
-    ```
-
-4. Start the development server:
-
-    - Backend:
-      ```bash
-      cd backend
-      npm start
-      ```
-
-    - Frontend:
-      ```bash
-      cd frontend
-      npm start
-      ```
-
-5. Visit `https://portfolio-8cqz.onrender.com/` in your browser to view the portfolio.
-
-## Contact
-
-Feel free to reach out to me via the contact form on the portfolio website, or connect with me on [LinkedIn](https://www.linkedin.com/in/beerappa/).
-
+## 📜 License
+This project is **open-source** and available under the
