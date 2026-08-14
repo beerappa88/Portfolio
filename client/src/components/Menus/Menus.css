@@ -3,6 +3,9 @@
   height: 180px;
   width: 180px;
   object-fit: cover;
+  /* Portrait photo in a round frame: a centred crop lands on the torso,
+     so bias the visible window toward the top where the face is. */
+  object-position: center top;
   display: block;
   margin: 0 auto;
 }

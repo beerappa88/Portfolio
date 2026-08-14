@@ -142,24 +142,33 @@ fetched on click instead of being pulled into the JS bundle.
 
 ### Images
 
-Replace `client/src/assets/images/Git.jpeg` with your own photo (used in the
-sidebar at 180×180 and in About).
+Replace `client/src/assets/images/profile.jpg` with your own photo (used in the
+sidebar at 180×180 and in About). It is currently 600×707 at ~84 KB.
 
-The current file is **225 KB**, which is far larger than needed for the sizes
-it's displayed at. Before committing a replacement, compress it —
-[Squoosh](https://squoosh.app/) is the quickest option. Export at roughly
-400×500 for About, and prefer WebP:
+Keep replacements small — the original here was 887×1045 at 220 KB, roughly
+2.5× the pixels ever displayed. Compress before committing;
+[Squoosh](https://squoosh.app/) is the quickest option. Around 600px on the
+long edge at quality 80–85 is plenty, and WebP is smaller still:
 
 ```js
 import profilePic from "../assets/images/profile.webp";
 ```
 
+If you swap in a photo with a different aspect ratio, update the `width` and
+`height` attributes in `About.js` to match — they exist to reserve layout space
+and prevent content shifting as the image loads.
+
+The sidebar crops the photo to a circle with `object-fit: cover` and
+`object-position: center top` (in `Menus.css`), which suits a portrait where
+the face sits high. A photo framed differently may want that adjusted.
+
 ### Favicon and social preview
 
 - Replace `favicon.ico`, `logo192.png` and `logo512.png` in `client/public/` —
   these are still the default React logo.
-- Add `og-image.png` (1200×630) to `client/public/`. Without it, links shared
-  to LinkedIn, Slack or WhatsApp show no preview image.
+- `client/public/og-image.jpg` (1200×630) is the link preview shown on
+  LinkedIn, Slack and WhatsApp. Regenerate it whenever your name, role or photo
+  changes — it has them baked in as pixels.
 
 ---
 
@@ -174,7 +183,14 @@ These aren't in `utils/` — edit them directly:
 | `client/public/robots.txt` | The `Sitemap:` URL |
 | `client/public/sitemap.xml` | The `<loc>` URL |
 
-All four contain the placeholder domain `https://beerappa-portfolio.vercel.app`.
+Three of them contain the placeholder domain
+`https://beerappa-portfolio.vercel.app`. Don't edit those URLs by hand — a
+stale `og:url` still produces a wrong link preview even when `canonical` is
+right. Run this instead, which updates all three together and is safe to re-run:
+
+```bash
+npm run set-domain -- https://your-real-domain.com
+```
 Replace it everywhere once you know your real URL.
 
 ---

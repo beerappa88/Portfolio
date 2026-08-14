@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Single-page site: react-scroll anchors are not separate URLs, so there is
-     one entry. Update the domain to match your deployment. -->
+     one entry. Set the domain with: npm run set-domain -- https://your-domain.com -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://beerappa-portfolio.vercel.app/</loc>

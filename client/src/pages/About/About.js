@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import Image from "../../assets/images/Git.jpeg";
+import Image from "../../assets/images/profile.jpg";
 import { profile } from "../../utils/profile";
 
 const About = () => (
@@ -10,8 +10,8 @@ const About = () => (
         <img
           src={Image}
           alt={`${profile.name}, ${profile.role}`}
-          width="400"
-          height="500"
+          width="600"
+          height="707"
           loading="lazy"
         />
       </div>

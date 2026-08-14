@@ -155,8 +155,15 @@ files — you should not need to touch any JSX:
 | `client/src/utils/navLinks.js` | Sidebar / mobile nav items |
 
 Then swap the assets: `client/public/resume.pdf`,
-`client/src/assets/images/Git.jpeg`, the favicon set in `client/public/`, and
-the URLs in `index.html`, `robots.txt` and `sitemap.xml`.
+`client/src/assets/images/profile.jpg`, `client/public/og-image.jpg`, and the
+favicon set in `client/public/`.
+
+Point the site at your domain in one step — this rewrites `index.html`,
+`robots.txt` and `sitemap.xml` together:
+
+```bash
+npm run set-domain -- https://your-real-domain.com
+```
 
 See [docs/CONTENT-GUIDE.md](docs/CONTENT-GUIDE.md) for field-by-field detail.
 

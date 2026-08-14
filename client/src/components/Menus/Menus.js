@@ -1,7 +1,7 @@
 import React from "react";
 import "./Menus.css";
 import NavLinks from "../NavLinks/NavLinks";
-import Image from "../../assets/images/Git.jpeg";
+import Image from "../../assets/images/profile.jpg";
 import { profile } from "../../utils/profile";
 
 const Menus = ({ toggle }) => (
