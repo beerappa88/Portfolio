@@ -1,0 +1,45 @@
+.techstack {
+  margin-top: 60px;
+}
+
+.techstack h2 {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.tech-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.techstack .card {
+  cursor: pointer;
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.techstack .tech-icon {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.techstack .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 20px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px;
+  background-color: var(--accent);
+  color: #fff;
+  transition: 0.4s;
+}
+
+@media (min-width: 992px) {
+  .techstack {
+    padding-left: var(--sidebar-width);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .techstack {
+    padding: 0;
+    margin-top: 50px;
+  }
+}

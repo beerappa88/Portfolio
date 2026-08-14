@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Design tokens
+   Every colour in the app resolves through these. Dark mode swaps the token
+   values rather than re-declaring component rules, so a new component picks
+   up both themes for free.
+   ========================================================================== */
+:root {
+  /* brand */
+  --accent: #138781;
+  --accent-soft: #1387812a;
+  --highlight: #f29f67;
+  --gold: #e0b50f;
+  --blue: #3b8ff3;
+  --ink: #1e1e2c;
+
+  /* surfaces & text */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: rgba(128, 128, 128, 0.1);
+  --text: #1e1e2c;
+  --text-muted: #6b7280;
+  --heading: #808080;
+  --border: #e0e0e0;
+
+  --nav-bg: #1e1e2c;
+  --nav-text: #ffffff;
+  --timeline-line: #1e1e2c;
+  --shadow-card: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  /* layout — updated at runtime by Sidebar.js when it collapses */
+  --sidebar-width: 200px;
+  --gutter: 24px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #5f264a;
+  --surface: #6d3357;
+  --surface-muted: rgba(255, 255, 255, 0.095);
+  --text: #f4eee0;
+  --text-muted: #d8c9d3;
+  --heading: #e6d8e0;
+  --border: rgba(255, 255, 255, 0.2);
+
+  --accent: #4ecdc4;
+  --nav-bg: #1e1e2c;
+  --timeline-line: #f4eee0;
+  --shadow-card: rgba(0, 0, 0, 0.4) 1.95px 1.95px 6px;
+}
+
+/* ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Screen-reader-only text that stays keyboard reachable.
+   Bootstrap ships this class, but declaring it here means the app does not
+   silently lose its labels if the Bootstrap CDN is unreachable. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Bots fill this; people never see it. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
+}
+
+/* One consistent focus indicator. The old CSS set outline-width:0 on buttons
+   and cancelled its own input outline, leaving keyboard users with no cue. */
+:focus-visible {
+  outline: 3px solid var(--highlight);
+  outline-offset: 2px;
+}
+
+.scroll-to-top {
+  background-color: var(--ink) !important;
+  border-radius: 80px !important;
+}
+
+.footer {
+  margin-top: 40px;
+  color: var(--text);
+}
+
+/* Section headings share one treatment across every page. */
+.section-rule,
+.project hr,
+.techstack hr,
+.education hr,
+.work-exp hr {
+  color: var(--accent);
+  width: min(400px, 80%);
+  margin: 10px auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    margin: 20px 0;
+    padding: 0;
+  }
+}

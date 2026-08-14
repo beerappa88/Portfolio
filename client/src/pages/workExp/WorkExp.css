@@ -1,0 +1,44 @@
+.work {
+  background-color: var(--accent-soft);
+}
+
+.work-exp {
+  padding: 60px 0;
+}
+
+.work-exp h2 {
+  font-weight: bold;
+  color: var(--text);
+}
+
+.work-exp .vertical-timeline-element-title {
+  color: var(--accent);
+}
+
+.work-exp .vertical-timeline-element-subtitle {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.timeline-points {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.timeline-points li {
+  margin-bottom: 6px;
+}
+
+@media (min-width: 992px) {
+  .work {
+    margin-left: var(--sidebar-width);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .work {
+    margin: 50px 0 0;
+    padding: 0;
+  }
+}

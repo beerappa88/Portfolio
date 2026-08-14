@@ -1,0 +1,39 @@
+.navbar-profile-pic img {
+  border-radius: 90px;
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar-nav .nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 25px;
+  color: var(--nav-text);
+}
+
+.nav-link {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.nav-link a {
+  color: var(--nav-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link a:hover {
+  color: var(--highlight);
+}
+
+.nav-link a.active {
+  color: var(--highlight);
+  border-left: 5px solid var(--highlight);
+  padding-left: 10px;
+  text-decoration: none;
+}

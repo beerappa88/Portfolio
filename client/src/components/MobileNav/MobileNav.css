@@ -1,0 +1,51 @@
+.mobile-nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.mobile-nav-header {
+  height: 50px;
+  width: 100%;
+  background-color: var(--nav-bg);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-header .mobile-nav-icon {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-title {
+  margin-left: 20px;
+  color: var(--highlight);
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.mobile-nav-menu .nav-items {
+  list-style: none;
+  height: auto;
+  width: 220px;
+  background-color: var(--nav-bg);
+  padding: 10px 10px 20px 25px;
+  border-bottom-right-radius: 10px;
+  margin: 0;
+}
+
+/* Matches Sidebar.css: the two never overlap and never both hide. */
+@media (min-width: 992px) {
+  .mobile-nav {
+    display: none;
+  }
+}

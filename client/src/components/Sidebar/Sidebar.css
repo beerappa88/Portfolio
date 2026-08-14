@@ -1,0 +1,44 @@
+.sidebar {
+  height: 100vh;
+  background-color: var(--nav-bg);
+  width: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: width 0.2s ease;
+  overflow-y: auto;
+}
+
+.sidebar-expanded {
+  width: 200px;
+}
+
+.sidebar-toggle-icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar-toggle-icons button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+}
+
+.sidebar-toggle-icons button svg {
+  background-color: var(--highlight);
+  color: #fff;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Below the desktop breakpoint MobileNav takes over. The old rule cut over at
+   600px, which left 601–991px showing the sidebar with content squeezed
+   underneath it. */
+@media (max-width: 991.98px) {
+  .sidebar {
+    display: none;
+  }
+}
