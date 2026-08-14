@@ -164,8 +164,10 @@ the face sits high. A photo framed differently may want that adjusted.
 
 ### Favicon and social preview
 
-- Replace `favicon.ico`, `logo192.png` and `logo512.png` in `client/public/` —
-  these are still the default React logo.
+- `favicon.ico`, `logo192.png` and `logo512.png` in `client/public/` are a
+  generated "B" monogram on the brand teal, replacing the default React logo.
+  Swap them if you'd rather have a mark of your own — keep the filenames, since
+  `index.html` and `manifest.json` reference them.
 - `client/public/og-image.jpg` (1200×630) is the link preview shown on
   LinkedIn, Slack and WhatsApp. Regenerate it whenever your name, role or photo
   changes — it has them baked in as pixels.
