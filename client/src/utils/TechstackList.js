@@ -1,6 +1,7 @@
 import { BsFiletypeHtml, BsFiletypeCss, BsBootstrap } from "react-icons/bs";
-import { FaNodeJs, FaDocker } from "react-icons/fa";
+import { FaNodeJs, FaDocker, FaAws } from "react-icons/fa";
 import { TbBrandCpp } from "react-icons/tb";
+import { SiRedis, SiApachespark } from "react-icons/si";
 import {
   SiJavascript,
   SiPython,
@@ -97,15 +98,32 @@ export const TechstackList = [
     name: "PostgreSQL",
     icon: SiPostgresql,
   },
+  {
+    _id: 16,
+    name: "Redis",
+    icon: SiRedis,
+  },
+
+  // Data & Cloud
+  {
+    _id: 17,
+    name: "PySpark",
+    icon: SiApachespark,
+  },
+  {
+    _id: 18,
+    name: "AWS",
+    icon: FaAws,
+  },
 
   // Tools & DevOps
   {
-    _id: 16,
+    _id: 19,
     name: "Git / GitHub",
     icon: SiGithub,
   },
   {
-    _id: 17,
+    _id: 20,
     name: "Docker",
     icon: FaDocker,
   },

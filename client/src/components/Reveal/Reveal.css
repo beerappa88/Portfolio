@@ -64,6 +64,26 @@
   animation-name: revealZoom;
 }
 
+/* Reduced motion means "no movement", not "no feedback". Drop the rotation
+   and translation but keep a plain opacity fade, so the section still reads
+   as arriving rather than snapping in.
+   NOTE: if you see no flip at all on your own machine, check
+   Settings > Accessibility > Visual effects > Animation effects — when that
+   is off, Windows tells the browser to suppress motion and this branch
+   applies. Visitors with it on get the full flip. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: opacity 0.35s ease-in-out !important;
+    transition-duration: 0.35s !important;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
 @keyframes revealZoom {
   from {
     opacity: 0;
