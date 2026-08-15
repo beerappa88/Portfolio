@@ -12,7 +12,11 @@ class MockIntersectionObserver {
   constructor(callback) {
     this.callback = callback;
   }
-  observe() {}
+  // Report the target as visible straight away, so <Reveal> children are in
+  // their revealed state during tests rather than stuck pre-animation.
+  observe(target) {
+    this.callback([{ isIntersecting: true, target }], this);
+  }
   unobserve() {}
   disconnect() {}
   takeRecords() {

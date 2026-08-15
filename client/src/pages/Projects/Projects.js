@@ -1,6 +1,7 @@
 import React from "react";
 import "./Projects.css";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import Reveal from "../../components/Reveal/Reveal";
 import { projects } from "../../utils/projects";
 
 const Projects = () => (
@@ -15,9 +16,13 @@ const Projects = () => (
     </p>
 
     <div className="row" id="ads">
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <div className="col-md-4 mb-4" key={project._id}>
-          <ProjectCard project={project} />
+          {/* Stagger by column so the row flips in sequence rather than
+              all six cards spinning at once. */}
+          <Reveal animation="spin" delay={(index % 3) * 120}>
+            <ProjectCard project={project} />
+          </Reveal>
         </div>
       ))}
     </div>

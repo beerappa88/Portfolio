@@ -1,5 +1,6 @@
 import React from "react";
 import "./Techstack.css";
+import Reveal from "../../components/Reveal/Reveal";
 import { TechstackList } from "../../utils/TechstackList";
 
 const Techstack = () => (
@@ -13,20 +14,22 @@ const Techstack = () => (
       back-end tools, and APIs
     </p>
     <ul className="row tech-list">
-      {TechstackList.map((tech) => (
+      {TechstackList.map((tech, index) => (
         <li key={tech._id} className="col-md-3">
-          <div className="card m-2">
-            <div className="card-content">
-              <div className="card-body">
-                <div className="media d-flex justify-content-center align-items-center">
-                  <tech.icon className="tech-icon" aria-hidden="true" />
-                  <div className="media-body">
-                    <h3 className="h5 mb-0">{tech.name}</h3>
+          <Reveal animation="fade-left" delay={(index % 4) * 90}>
+            <div className="card m-2">
+              <div className="card-content">
+                <div className="card-body">
+                  <div className="media d-flex justify-content-center align-items-center">
+                    <tech.icon className="tech-icon" aria-hidden="true" />
+                    <div className="media-body">
+                      <h3 className="h5 mb-0">{tech.name}</h3>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </li>
       ))}
     </ul>

@@ -113,9 +113,23 @@ body {
   border-radius: 80px !important;
 }
 
+/* The sidebar is fixed, so without this offset the footer centres against the
+   full viewport and reads as sitting left of the content above it. */
 .footer {
   margin-top: 40px;
+  padding: 24px 16px;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 992px) {
+  .footer {
+    margin-left: var(--sidebar-width);
+  }
 }
 
 /* Section headings share one treatment across every page. */
@@ -142,7 +156,7 @@ body {
 
 @media (max-width: 767px) {
   .footer {
-    margin: 20px 0;
-    padding: 0;
+    margin: 20px 0 0;
+    padding: 20px 16px;
   }
 }

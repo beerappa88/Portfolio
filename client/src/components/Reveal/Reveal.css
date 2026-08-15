@@ -1,0 +1,76 @@
+/* Hidden until the observer marks it visible. The global
+   prefers-reduced-motion rule in index.css collapses the duration to ~0,
+   and animation-fill-mode: both still applies the end state — so reduced
+   motion shows content instantly rather than leaving it invisible. */
+.reveal {
+  opacity: 0;
+  /* Cards use h-100, so the wrapper must not collapse their height. */
+  height: 100%;
+}
+
+.reveal.is-visible {
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+/* The flip the project cards had under react-reveal's <Spin> */
+.reveal-spin.is-visible {
+  animation-name: revealSpin;
+}
+
+@keyframes revealSpin {
+  from {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+.reveal-fade-up.is-visible {
+  animation-name: revealFadeUp;
+}
+
+@keyframes revealFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal-fade-left.is-visible {
+  animation-name: revealFadeLeft;
+}
+
+@keyframes revealFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal-zoom.is-visible {
+  animation-name: revealZoom;
+}
+
+@keyframes revealZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
